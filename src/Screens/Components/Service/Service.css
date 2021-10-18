@@ -1,9 +1,10 @@
 .service-card {
-  min-height: 500px;
-  max-height: 550px;
+  min-height: 530px;
+  max-height: 530px;
   border: none !important;
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 3px solid #07a5e2 !important;
 }
 .service-card img {
   min-height: 250px !important;
@@ -36,6 +37,7 @@
 .price i {
   margin-right: 5px;
 }
+
 .service-card a {
   text-decoration: none;
   color: #07a5e2;

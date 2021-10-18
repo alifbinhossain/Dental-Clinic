@@ -4,20 +4,23 @@ import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
-  const { name, img, details, cost } = service;
+  const { name, img, details, cost, id } = service;
+  const url = `/service/${id}`;
+
   return (
     <Card className="service-card p-3">
-      <Card.Img variant="top" src={img} />
-      <Card.Body className="px-0 ">
+      <Card.Img className="mb-auto" variant="top" src={img} />
+      <Card.Body className="px-0 d-flex flex-column">
         <Card.Title className="card-title">{name}</Card.Title>
-        <Card.Text>
-          {details.slice(0, 150)}..
+        <Card.Text className="mt-auto">
+          <p> {details?.slice(0, 150)}..</p>
           <p className="price mt-4">
             <i class="fas fa-chevron-right"></i> Starting from{" "}
             <span>{cost}</span>$
           </p>
           <p className="price">
-            <i class="fas fa-chevron-right"></i> <Link>See Details</Link>
+            <i class="fas fa-chevron-right"></i>{" "}
+            <Link to={url}>See Details</Link>
           </p>
         </Card.Text>
       </Card.Body>

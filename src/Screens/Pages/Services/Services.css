@@ -1,0 +1,12 @@
+.services {
+  padding: 2rem 8rem 4rem;
+  color: #07a5e2;
+}
+.services h1 {
+  font-family: "Jost", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 3px solid #07a5e2;
+  width: max-content;
+  margin: 0 auto 2rem;
+  padding-bottom: 12px;
+}

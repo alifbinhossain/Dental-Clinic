@@ -2,12 +2,12 @@
   min-height: 100vh;
 }
 
-.services {
+.home-services {
   margin-bottom: 5%;
   padding: 0 8rem;
   color: #07a5e2;
 }
-.services h2 {
+.home-services h2 {
   font-family: "Jost", sans-serif;
   font-size: 42px;
   color: #07a5e2;

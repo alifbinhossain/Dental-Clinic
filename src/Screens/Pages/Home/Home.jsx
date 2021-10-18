@@ -3,21 +3,21 @@ import "./Home.css";
 import Banner from "../../Components/Banner/Banner";
 import Features from "../../Components/Features/Features";
 import Statistics from "../../Components/Statistics/Statistics";
-import useService from "../../../hooks/useService";
 import { Col, Row } from "react-bootstrap";
 import Service from "../../Components/Service/Service";
+import useAll from "../../../hooks/useAll";
 
 const Home = () => {
-  const { services } = useService();
+  const { healthServices } = useAll();
+  const { services } = healthServices;
   services.length = 6;
-
   return (
     <div className="home">
       <Banner></Banner>
       <Features></Features>
       <Statistics></Statistics>
 
-      <section className="services">
+      <section className="home-services">
         <h2 className="text-center mb-4">Our Services</h2>
         <Row xs={1} md={2} lg={3} className="g-4">
           {services?.map((service) => (
