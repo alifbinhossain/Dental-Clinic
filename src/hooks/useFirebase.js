@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import initAuthentication from "../Firebase/Firebase.Init";
 import Swal from "sweetalert2";
 
+/* -------------------------------------------------------------------------- */
+/*                           IMPORTING FROM FIREBASE                          */
+/* -------------------------------------------------------------------------- */
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -25,6 +28,9 @@ const useFirebase = () => {
 
   const auth = getAuth();
 
+  /* -------------------------------------------------------------------------- */
+  /*                                ALL PROVIDER                                */
+  /* -------------------------------------------------------------------------- */
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
   const twitterProvider = new TwitterAuthProvider();
@@ -97,10 +103,22 @@ const useFirebase = () => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
         setError("");
+        Swal.fire({
+          icon: "success",
+          title: "Please Check Your Email ",
+          showConfirmButton: false,
+          timer: 1500,
+          padding: "1rem 2rem 3rem",
+        });
       })
       .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: error.message,
+          showConfirmButton: false,
+          timer: 1500,
+        });
         setError(error.message);
-        console.log(error.message);
       });
   };
   /* -------------------------------------------------------------------------- */
