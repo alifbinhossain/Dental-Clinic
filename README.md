@@ -5,6 +5,6 @@
 - This is a website about dental services.
 - You can book your appointment on this website.
 - But you must sign in to schedule an appointment.
-- You can visit the Services and Dentists section when you are signed in.
+- You can visit the Services and Dentists page when you are signed in.
 - You will receive a popup message once you have made your appointment.
-- Visit & Enjoy 😁
+- Visit & Enjoy 😉
