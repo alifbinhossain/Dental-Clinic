@@ -11,3 +11,9 @@
   font-size: 42px;
   color: #07a5e2;
 }
+
+@media (max-width: 668px) {
+  .home-services {
+    padding-top: 1rem;
+  }
+}

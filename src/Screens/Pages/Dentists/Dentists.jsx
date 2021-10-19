@@ -17,7 +17,7 @@ const Dentists = () => {
         Dentist
       </h1>
 
-      <Row xs={1} md={2} lg={4} className="g-4 mt-3">
+      <Row xs={1} md={2} lg={4} className="g-4 mt-lg-3 mt-2">
         {dentists.map((dentist) => (
           <Col>
             <Dentist key={dentist.id} dentist={dentist}></Dentist>

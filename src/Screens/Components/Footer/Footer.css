@@ -51,7 +51,6 @@ footer {
 @media (max-width: 668px) {
   footer {
     padding: 3rem 2rem 1rem;
-    margin-top: 3rem;
   }
 
   .footer-list {
@@ -73,5 +72,6 @@ footer {
   .footer-copyright {
     text-align: left;
     margin-top: 10px;
+    width: 70%;
   }
 }

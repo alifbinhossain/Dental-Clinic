@@ -30,6 +30,10 @@
 }
 
 @media (max-width: 668px) {
+  .dentists {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
   .dentists h1,
   .services h1 {
     font-size: 24px;

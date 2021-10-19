@@ -4,8 +4,13 @@ import { Carousel } from "react-bootstrap";
 import banner1 from "../../../Images/Banner/banner-1.png";
 import banner2 from "../../../Images/Banner/banner-3.png";
 import banner3 from "../../../Images/Banner/banner-4.png";
+import { useHistory } from "react-router";
 
 const Banner = () => {
+  const history = useHistory();
+  const handleGoToBooking = () => {
+    history.push("/dentists");
+  };
   return (
     <div className="banner">
       <Carousel fade className="banner-carousel">
@@ -23,7 +28,9 @@ const Banner = () => {
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-learn">Consult a Dentist</button>
+              <button onClick={handleGoToBooking} className="btn-learn">
+                Consult a Dentist
+              </button>
             </div>
           </div>
         </Carousel.Item>
@@ -42,7 +49,9 @@ const Banner = () => {
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-learn">Consult a Dentist</button>
+              <button onClick={handleGoToBooking} className="btn-learn">
+                Consult a Dentist
+              </button>
             </div>
           </div>
         </Carousel.Item>
@@ -60,7 +69,9 @@ const Banner = () => {
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-learn">Consult a Dentist</button>
+              <button onClick={handleGoToBooking} className="btn-learn">
+                Consult a Dentist
+              </button>
             </div>
           </div>
         </Carousel.Item>

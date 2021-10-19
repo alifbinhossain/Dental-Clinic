@@ -19,7 +19,7 @@ const Home = () => {
 
       <section className="home-services container">
         <h2 className="text-center mb-4">Our Services</h2>
-        <Row xs={1} md={2} lg={3} className="g-4">
+        <Row xs={1} md={2} lg={3} className="g-4 mb-5">
           {services?.slice(0, 6)?.map((service) => (
             <Col>
               <Service service={service} key={service.id}></Service>
