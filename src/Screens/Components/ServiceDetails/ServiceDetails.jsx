@@ -43,7 +43,7 @@ const ServiceDetails = () => {
             <button
               onClick={handleGetAppointment}
               style={{ width: "max-content", transition: "all .2s ease" }}
-              className="btn-book btn-active"
+              className="btn-book btn-active mb-3 mb-lg-0"
             >
               Get Appointment
             </button>

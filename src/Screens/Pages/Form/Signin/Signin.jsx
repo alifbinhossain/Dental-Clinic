@@ -64,6 +64,7 @@ const Signin = () => {
           title: "Congrats! Succesfully logged in",
           showConfirmButton: false,
           timer: 1500,
+          padding: "1rem 2rem 3rem",
         });
         setError("");
         history.push(redirectUrl);
@@ -71,9 +72,10 @@ const Signin = () => {
       .catch((err) => {
         Swal.fire({
           icon: "error",
-          title: err.message,
+          title: `Please try again.. ${err.message}`,
           showConfirmButton: false,
           timer: 1500,
+          padding: "1rem 2rem 3rem",
         });
       });
   };

@@ -1,10 +1,16 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+
+/* -------------------------------------------------------------------------- */
+/*                        IMPORTING PAGES & COMPONENTS                        */
+/* -------------------------------------------------------------------------- */
 import AllProvider from "./context/AllProvider";
 import Footer from "./Screens/Components/Footer/Footer";
 import Header from "./Screens/Components/Header/Header";
 import PrivateRoute from "./Screens/Components/PrivateRoute/PrivateRoute";
 import ServiceDetails from "./Screens/Components/ServiceDetails/ServiceDetails";
+import NotFound from "./Screens/Pages/404/NotFound";
+import About from "./Screens/Pages/About/About";
 import Dentists from "./Screens/Pages/Dentists/Dentists";
 import Form from "./Screens/Pages/Form/Form";
 import Signin from "./Screens/Pages/Form/Signin/Signin";
@@ -16,25 +22,28 @@ function App() {
   return (
     <div className="main">
       <AllProvider>
-        {/* -------------------------------------------------------------------------- */
-        /*                                 OPEN ROUTES                                */
-        /* -------------------------------------------------------------------------- */}
         <Router>
           <Header></Header>
           <Switch>
+            {/* -------------------------------------------------------------------------- */
+            /*                                 OPEN ROUTES                                */
+            /* -------------------------------------------------------------------------- */}
             <Route exact path="/">
               <Home></Home>
             </Route>
             <Route exact path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/services">
-              <Services></Services>
+            <Route exact path="/about">
+              <About></About>
             </Route>
 
             {/* -------------------------------------------------------------------------- */
             /*                               PRIVATE ROUTES                               */
             /* -------------------------------------------------------------------------- */}
+            <PrivateRoute exact path="/services">
+              <Services></Services>
+            </PrivateRoute>
             <PrivateRoute exact path="/service/:id">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
@@ -52,7 +61,15 @@ function App() {
                 <Signup></Signup>
               </Form>
             </Route>
+
+            {/* -------------------------------------------------------------------------- */
+            /*                                  404 ROUTE                                 */
+            /* -------------------------------------------------------------------------- */}
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+
           <Footer></Footer>
         </Router>
       </AllProvider>

@@ -1,30 +1,47 @@
-.statistics {
-  margin-bottom: 4%;
-  background-image: url(../../../Images/Background-Banner/content-prlx.jpg);
+.statistics,
+.about__statistics {
   background-size: cover;
   background-position: center;
   padding: 2rem 8rem;
-  color: #fff;
 }
 
-.statistics h2 {
+.statistics {
+  background-image: url(../../../Images/Background-Banner/content-prlx.jpg);
+  color: #fff;
+  margin-bottom: 4%;
+}
+.about__statistics {
+  margin-top: 1rem;
+}
+
+.statistics h2,
+.about__statistics h1 {
   font-weight: 400;
   font-size: 28px;
 }
-.statistics p {
+.statistics p,
+.about__statistics p {
   margin-bottom: 2rem;
   font-weight: 300;
   text-align: center;
 }
-.statistics-list {
-  margin: 0 auto 30px;
+.statistics-list,
+.about__statistics-list {
   list-style: none;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 10px;
 }
-.statistics-item {
+.statistics-list {
+  margin: 0 auto 30px;
+}
+.about__statistics-list {
+  margin-top: 2rem;
+}
+
+.statistics-item,
+.about__statistics-item {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -34,8 +51,13 @@
   align-items: center;
   justify-content: center;
 }
+.about__statistics-item {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9e9e9e9;
+}
 
-.statistics-item i {
+.statistics-item i,
+.about__statistics i {
   font-size: 32px;
   margin: 1rem 0;
 }
@@ -44,18 +66,33 @@
   font-size: 14px;
 }
 
+.about__statistics p {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
 /* ---------------------------- SHORT MEDIA QUERY --------------------------- */
 @media (max-width: 668px) {
   .statistics {
     padding: 2rem 1rem;
   }
-
+  .about__statistics {
+    padding: 1rem;
+  }
   .statistics p {
     margin-bottom: 1rem;
   }
-  .statistics-list {
+  .statistics-list,
+  .about__statistics-list {
     margin: 0 auto 10px;
     grid-template-columns: repeat(1, 1fr);
     grid-row-gap: 10px;
+  }
+
+  .about__statistics {
+    margin-top: 0;
+  }
+  .about__statistics h1 {
+    margin-bottom: 1rem;
   }
 }

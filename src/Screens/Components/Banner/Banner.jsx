@@ -24,9 +24,8 @@ const Banner = () => {
                 <span>Precision Experience.</span>
               </h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                quod temporibus minus animi aut cupiditate obcaecati dignissimos
-                quidem alias quam?
+                We are committed to providing you with a high standard of
+                Professional Care.
               </p>
               <button onClick={handleGoToBooking} className="btn-learn">
                 Consult a Dentist
@@ -45,9 +44,8 @@ const Banner = () => {
                 <span> Dental Care.</span>
               </h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                quod temporibus minus animi aut cupiditate obcaecati dignissimos
-                quidem alias quam?
+                We are an established family friendly dental practice that has
+                been offering Private Dental Care.
               </p>
               <button onClick={handleGoToBooking} className="btn-learn">
                 Consult a Dentist
@@ -65,9 +63,8 @@ const Banner = () => {
                 <span> Soft & Gental.</span>
               </h1>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-                quod temporibus minus animi aut cupiditate obcaecati dignissimos
-                quidem alias quam?
+                We sincerely believe that visiting a dentist shouldn’t be a
+                frightening or stressful experience!
               </p>
               <button onClick={handleGoToBooking} className="btn-learn">
                 Consult a Dentist
