@@ -2,6 +2,7 @@ import React from "react";
 import "./ServiceDetails.css";
 import { useParams, useHistory } from "react-router-dom";
 import useAll from "../../../hooks/useAll";
+import Swal from "sweetalert2";
 
 const ServiceDetails = () => {
   const { healthServices } = useAll();
@@ -14,6 +15,16 @@ const ServiceDetails = () => {
   const history = useHistory();
   const goToServices = () => {
     history.push("/services");
+  };
+
+  const handleGetAppointment = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Awesome! Your booking has been confirmed.. ",
+      showConfirmButton: false,
+      timer: 1500,
+      padding: "1rem 2rem 3rem",
+    });
   };
 
   return (
@@ -29,8 +40,12 @@ const ServiceDetails = () => {
           </h5>
           <p>{currentService?.details}</p>
           <div>
-            <button style={{ width: "max-content" }} className="btn-book">
-              Book Appointment
+            <button
+              onClick={handleGetAppointment}
+              style={{ width: "max-content", transition: "all .2s ease" }}
+              className="btn-book btn-active"
+            >
+              Get Appointment
             </button>
             <button
               onClick={goToServices}

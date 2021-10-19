@@ -1,7 +1,7 @@
 .form {
   background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.45),
+      to right bottom,
+      rgba(0, 0, 0, 0.35),
       rgba(0, 0, 0, 0.65)
     ),
     url(../../../Images/Background-Banner/grd-bg-700.jpg);
@@ -63,7 +63,7 @@
   border: 1px solid #dee3e4;
   position: absolute;
   top: 50%;
-  width: 30%;
+  width: 27%;
   opacity: 0.2;
 }
 .text-more-option::before {

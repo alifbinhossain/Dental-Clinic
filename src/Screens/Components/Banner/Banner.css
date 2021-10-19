@@ -13,7 +13,6 @@
   background-size: cover;
 }
 .banner-carousel__item img {
-  width: 50%;
   height: 70vh;
   object-fit: cover;
 }
@@ -84,4 +83,38 @@
   background-color: transparent;
   border: 2px solid #fff;
   color: #fff;
+  transition: all 0.3s ease;
+}
+.btn-learn:hover {
+  background-color: #fff;
+  color: #0facdf;
+  border: 2px solid #fff;
+}
+.btn-learn:active {
+  transform: scale(0.98);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------------------- SHORT MEDIA QUERY --------------------------- */
+@media (max-width: 668px) {
+  .banner-carousel__item {
+    min-height: 80vh;
+  }
+  .banner-carousel__item img {
+    display: none !important;
+  }
+
+  .banner-carousel__content {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .banner-carousel__content--details {
+    margin-left: 0;
+    width: 100%;
+  }
+  .banner-carousel__content--details p {
+    width: 100%;
+  }
 }

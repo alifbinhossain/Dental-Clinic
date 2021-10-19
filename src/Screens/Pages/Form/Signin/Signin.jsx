@@ -32,9 +32,10 @@ const Signin = () => {
       .then((result) => {
         Swal.fire({
           icon: "success",
-          title: "Congrats! Succesfully logged in",
+          title: "Congrats! You are Succesfully logged in",
           showConfirmButton: false,
           timer: 1500,
+          padding: "1rem 2rem 3rem",
         });
         setError("");
         history.push(redirectUrl);

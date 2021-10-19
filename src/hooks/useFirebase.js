@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import initAuthentication from "../Firebase/Firebase.Init";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 import {
   getAuth,
@@ -56,9 +55,10 @@ const useFirebase = () => {
         setError("");
         Swal.fire({
           icon: "success",
-          title: "Congrats! Succesfully Signed Up.. ",
+          title: "Great! Your account has been succesfully created.. ",
           showConfirmButton: false,
           timer: 1500,
+          padding: "1rem 2rem 3rem",
         });
         window.location.reload();
       })
@@ -110,6 +110,13 @@ const useFirebase = () => {
     signOut(auth)
       .then(() => {
         setError("");
+        Swal.fire({
+          icon: "success",
+          title: "You are successfully logged out..",
+          showConfirmButton: false,
+          timer: 1500,
+          padding: "1rem 2rem 3rem",
+        });
       })
       .catch((error) => {
         setError(error.message);

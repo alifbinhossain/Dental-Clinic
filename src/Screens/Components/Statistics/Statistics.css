@@ -14,6 +14,7 @@
 .statistics p {
   margin-bottom: 2rem;
   font-weight: 300;
+  text-align: center;
 }
 .statistics-list {
   margin: 0 auto 30px;
@@ -41,4 +42,20 @@
 
 .statistics-item p {
   font-size: 14px;
+}
+
+/* ---------------------------- SHORT MEDIA QUERY --------------------------- */
+@media (max-width: 668px) {
+  .statistics {
+    padding: 2rem 1rem;
+  }
+
+  .statistics p {
+    margin-bottom: 1rem;
+  }
+  .statistics-list {
+    margin: 0 auto 10px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 10px;
+  }
 }

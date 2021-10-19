@@ -15,16 +15,15 @@ const Banner = () => {
             <div className="banner-carousel__content--details">
               <h3>Welcome to the Dental Clinic</h3>
               <h1>
-                <span> Expectional Service.</span> <br />
-                <span> Soft & Gental.</span>
+                <span>Certified Dentist.</span> <br />
+                <span>Precision Experience.</span>
               </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-book">Book Now</button>
-              <button className="btn-learn">Learn More</button>
+              <button className="btn-learn">Consult a Dentist</button>
             </div>
           </div>
         </Carousel.Item>
@@ -35,16 +34,15 @@ const Banner = () => {
             <div className="banner-carousel__content--details">
               <h3>Welcome to the Dental Clinic</h3>
               <h1>
-                <span> Expectional Service.</span> <br />
-                <span> Soft & Gental.</span>
+                <span>Enjoy Specialized & Personalized </span> <br />
+                <span> Dental Care.</span>
               </h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-book">Book Now</button>
-              <button className="btn-learn">Learn More</button>
+              <button className="btn-learn">Consult a Dentist</button>
             </div>
           </div>
         </Carousel.Item>
@@ -62,8 +60,7 @@ const Banner = () => {
                 quod temporibus minus animi aut cupiditate obcaecati dignissimos
                 quidem alias quam?
               </p>
-              <button className="btn-book">Book Now</button>
-              <button className="btn-learn">Learn More</button>
+              <button className="btn-learn">Consult a Dentist</button>
             </div>
           </div>
         </Carousel.Item>

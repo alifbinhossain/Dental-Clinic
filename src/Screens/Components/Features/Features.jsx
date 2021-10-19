@@ -3,7 +3,7 @@ import "./Features.css";
 
 const Features = () => {
   return (
-    <section className="home_features">
+    <section className="home_features container">
       <div className="home_features-item">
         <i class="fas fa-tooth color-blue"></i>
         <h2>Teeth Whitening</h2>

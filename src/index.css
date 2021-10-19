@@ -18,6 +18,7 @@ code {
 .main {
   /* font-family: "Jost", sans-serif; */
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 body.swal2-shown > [aria-hidden="true"] {

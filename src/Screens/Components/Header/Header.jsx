@@ -5,10 +5,27 @@ import { NavHashLink } from "react-router-hash-link";
 import { Container, Nav, Navbar, Spinner } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import useAll from "../../../hooks/useAll";
+import Swal from "sweetalert2";
 
 const Header = () => {
   const { firebase } = useAll();
   const { user, logOut } = firebase;
+
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure you want to log out?",
+      // text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logOut();
+      }
+    });
+  };
 
   const activeStyle = {
     color: "#07A5E2",
@@ -27,6 +44,10 @@ const Header = () => {
               <Nav.Link activeStyle={activeStyle} as={NavHashLink} to="/home">
                 Home
               </Nav.Link>
+
+              <Nav.Link activeStyle={activeStyle} as={NavHashLink} to="/about">
+                About
+              </Nav.Link>
               <Nav.Link
                 activeStyle={activeStyle}
                 as={NavHashLink}
@@ -34,20 +55,23 @@ const Header = () => {
               >
                 Services
               </Nav.Link>
-              <Nav.Link activeStyle={activeStyle} as={NavHashLink} to="/about">
-                About
-              </Nav.Link>
               <Nav.Link
                 activeStyle={activeStyle}
                 as={NavHashLink}
-                to="/contact"
+                to="/dentists"
               >
-                Contact Us
+                Dentist
               </Nav.Link>
               {user ? (
                 <>
-                  <Nav.Link>{user.displayName?.split(" ")[0]}</Nav.Link>
-                  <button className="btn-signout nav-link" onClick={logOut}>
+                  <Nav.Link>
+                    <i class="fas fa-user me-2"></i>
+                    {user.displayName?.split(" ")[0]}
+                  </Nav.Link>
+                  <button
+                    className="btn-signout nav-link"
+                    onClick={handleLogOut}
+                  >
                     <i class="fas fa-sign-out-alt"></i> Sign Out
                   </button>
                 </>

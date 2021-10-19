@@ -18,14 +18,14 @@ const Statistics = () => {
         <li className="statistics-item">
           <i class="fas fa-user-injured"></i>
           <h4>
-            <CountUp start={0} duration={2} end={2390} />
+            <CountUp start={0} duration={2} end={3500} suffix="+" />
           </h4>
           <p>Patients a year</p>
         </li>
         <li className="statistics-item">
           <i class="fas fa-user-friends"></i>
           <h4>
-            <CountUp start={0} duration={2} end={250} />
+            <CountUp start={0} duration={2} end={250} suffix="+" />
           </h4>
           <p>Working People</p>
         </li>
