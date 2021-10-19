@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
   const { name, img, details, cost, id } = service;
-  const url = `/service/${id}`;
+
+  const url = `/service/${id}`; ////SERVICE DETAILS PAGE URL
 
   return (
     <Card className="service-card p-3">

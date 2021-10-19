@@ -2,8 +2,7 @@ import React from "react";
 import "./Header.css";
 import logo from "../../../Images/Logo/logo-sm.png";
 import { NavHashLink } from "react-router-hash-link";
-import { Container, Nav, Navbar, Spinner } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import useAll from "../../../hooks/useAll";
 import Swal from "sweetalert2";
 
@@ -14,7 +13,6 @@ const Header = () => {
   const handleLogOut = () => {
     Swal.fire({
       title: "Are you sure you want to log out?",
-      // text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

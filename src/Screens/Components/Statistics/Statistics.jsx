@@ -7,6 +7,10 @@ const Statistics = () => {
     <section className="statistics">
       <h2 className="text-center">Dental Clinic in Numbers</h2>
       <p className="text-center">Some Statistics</p>
+
+      {/* -------------------------------------------------------------------------- */
+      /*                               STATISTICS LIST                              */
+      /* -------------------------------------------------------------------------- */}
       <ul className="statistics-list">
         <li className="statistics-item">
           <i class="far fa-thumbs-up"></i>

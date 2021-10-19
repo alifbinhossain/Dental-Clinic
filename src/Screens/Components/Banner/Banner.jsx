@@ -14,6 +14,9 @@ const Banner = () => {
   return (
     <div className="banner">
       <Carousel fade className="banner-carousel">
+        {/* -------------------------------------------------------------------------- */
+        /*                               CAROUSEL ITEM 1                              */
+        /* -------------------------------------------------------------------------- */}
         <Carousel.Item className="banner-carousel__item banner-carousel__item--1">
           <div className="banner-carousel__content">
             <img className="d-block" src={banner1} alt="First slide" />
@@ -33,7 +36,9 @@ const Banner = () => {
             </div>
           </div>
         </Carousel.Item>
-
+        {/* -------------------------------------------------------------------------- */
+        /*                               CAROUSEL ITEM 2                              */
+        /* -------------------------------------------------------------------------- */}
         <Carousel.Item className="banner-carousel__item banner-carousel__item--2">
           <div className="banner-carousel__content">
             <img className="d-block" src={banner2} alt="Second slide" />
@@ -53,6 +58,9 @@ const Banner = () => {
             </div>
           </div>
         </Carousel.Item>
+        {/* -------------------------------------------------------------------------- */
+        /*                               CAROUSEL ITEM 3                              */
+        /* -------------------------------------------------------------------------- */}
         <Carousel.Item className="banner-carousel__item banner-carousel__item--3">
           <div className="banner-carousel__content">
             <img className="d-block" src={banner3} alt="Third slide" />
