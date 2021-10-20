@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 const Statistics = () => {
   return (
-    <section className="statistics">
+    <section className="statistics" data-aos="fade-right">
       <h2 className="text-center">Dental Clinic in Numbers</h2>
       <p className="text-center">Some Statistics</p>
 

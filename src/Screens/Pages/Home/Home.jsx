@@ -12,7 +12,7 @@ const Home = () => {
   const { services } = healthServices;
 
   return (
-    <div className="home">
+    <div className="home" data-aos="fade-in">
       <Banner></Banner>
       <Features></Features>
       <Statistics></Statistics>

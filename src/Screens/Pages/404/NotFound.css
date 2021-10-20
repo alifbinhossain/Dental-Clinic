@@ -10,3 +10,12 @@
 .error-page img {
   width: 40%;
 }
+
+@media (max-width: 668px) {
+  .error-page {
+    padding: 3%;
+  }
+  .error-page img {
+    width: 100%;
+  }
+}

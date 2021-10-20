@@ -1,23 +1,22 @@
 import React from "react";
-import { Carousel, Col, Row } from "react-bootstrap";
 import "./About.css";
-import CountUp from "react-countup";
-
 import img1 from "../../../Images/About/about-1.jpg";
 import img2 from "../../../Images/About/about-2.jpg";
 import img3 from "../../../Images/About/about-3.jpg";
 import img4 from "../../../Images/About/about-4.jpg";
+
+import { Carousel, Col, Row } from "react-bootstrap";
+import CountUp from "react-countup";
 import { useHistory } from "react-router";
 
 const About = () => {
   const history = useHistory();
-
   const goToServices = () => {
     history.push("/services");
   };
 
   return (
-    <section className="about">
+    <section className="about" data-aos="fade-in">
       <h4>#About Our Clinic</h4>
       <h1 className="text-center mt-3">
         Our Clients Are Our{" "}
@@ -29,7 +28,7 @@ const About = () => {
         Dental Services
       </h1>
 
-      <Row xs={1} lg={2} className="g-4 about-banner container mt-4 mx-lg-5">
+      <Row xs={1} lg={2} className="g-4 container mt-4 mx-lg-5">
         <Col className="about-banner">
           <Carousel fade indicators={false} controls={false}>
             <Carousel.Item>
@@ -83,7 +82,7 @@ const About = () => {
         </Col>
       </Row>
 
-      <div className="about-message">
+      <div className="about-message" data-aos="fade-up">
         <h1>
           Nervous Troubled{" "}
           <span>
@@ -93,11 +92,11 @@ const About = () => {
           Make An Appointment
         </h1>
         <button onClick={goToServices} className="btn-learn">
-          Book Appointment
+          See All Services
         </button>
       </div>
 
-      <div className="about__statistics">
+      <div className="about__statistics" data-aos="fade-in">
         <h4>#Our advantages</h4>
         <h1 className="text-center mt-3">
           Features That You Will{" "}

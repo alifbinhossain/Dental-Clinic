@@ -11,6 +11,7 @@ const Header = () => {
   const { user, logOut } = firebase;
 
   const handleLogOut = () => {
+    //log out confirmation checking popup
     Swal.fire({
       title: "Are you sure you want to log out?",
       icon: "warning",
@@ -42,7 +43,6 @@ const Header = () => {
               <Nav.Link activeStyle={activeStyle} as={NavHashLink} to="/home">
                 Home
               </Nav.Link>
-
               <Nav.Link activeStyle={activeStyle} as={NavHashLink} to="/about">
                 About
               </Nav.Link>
@@ -60,6 +60,10 @@ const Header = () => {
               >
                 Dentist
               </Nav.Link>
+
+              {/* -------------------------------------------------------------------------- */
+              /*                      CONDITION RENDERING based on USER                     */
+              /* -------------------------------------------------------------------------- */}
               {user ? (
                 <>
                   <Nav.Link>

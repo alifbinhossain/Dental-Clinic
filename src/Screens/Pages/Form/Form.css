@@ -116,6 +116,15 @@
   color: #30d6be;
 }
 
+.required-text {
+  font-size: 12px;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: -8px;
+  font-weight: 500;
+  color: orange;
+}
+
 @media (max-width: 668px) {
   .form {
     min-height: 80vh;

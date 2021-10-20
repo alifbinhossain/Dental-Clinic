@@ -45,6 +45,7 @@ const Signin = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+
   const onSubmit = (data) => {
     setUser(data);
     const userEmail = data.email;
@@ -85,6 +86,9 @@ const Signin = () => {
                 className="form-input"
                 {...register("email", { required: true })}
               />
+              {errors.email?.type === "required" && (
+                <small className="required-text">Email is required</small>
+              )}
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupPassword">
               <Form.Label className="form-label">Password</Form.Label>
@@ -94,6 +98,9 @@ const Signin = () => {
                 className="form-input"
                 {...register("password", { required: true })}
               />
+              {errors.password?.type === "required" && (
+                <small className="required-text">Password is required</small>
+              )}
             </Form.Group>
             <div className="mb-3 d-flex justify-content-between align-items-center">
               <Form.Check className="form-label" label="Remember me?" />

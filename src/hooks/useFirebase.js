@@ -20,7 +20,7 @@ import {
 import popupError from "../popup/popupError";
 import popupSuccess from "../popup/popupSuccess";
 
-initAuthentication();
+initAuthentication(); //initial authentication
 
 const useFirebase = () => {
   const [user, setUser] = useState(null);
@@ -57,8 +57,8 @@ const useFirebase = () => {
       .then((result) => {
         updateUserInfo(name);
         setUser(result.user);
-        logOut(false);
         window.location.pathname = "/form/signin";
+        logOut(false);
         popupSuccess("new");
       })
       .catch((err) => {

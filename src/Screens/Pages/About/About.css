@@ -104,7 +104,9 @@
   .services h1 {
     font-size: 24px;
   }
-
+  .about-banner {
+    width: 100%;
+  }
   .about-content {
     padding: 0;
   }

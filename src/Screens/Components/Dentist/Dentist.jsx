@@ -15,7 +15,7 @@ const Dentist = ({ dentist }) => {
   };
   const { doctorName, doctorImg, designation } = dentist;
   return (
-    <Card className="dentist-card">
+    <Card className="dentist-card" data-aos="fade-in">
       <Card.Img variant="top" src={doctorImg} />
       <Card.Body className="text-center">
         <Card.Title className="card-title">{doctorName}</Card.Title>

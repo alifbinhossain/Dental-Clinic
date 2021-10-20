@@ -1,6 +1,4 @@
 import React from "react";
-import { useState } from "react";
-import { css } from "@emotion/react";
 import { PuffLoader } from "react-spinners";
 import { Redirect, Route } from "react-router";
 import useAll from "../../../hooks/useAll";
@@ -9,6 +7,9 @@ const PrivateRoute = ({ children, ...rest }) => {
   const { firebase } = useAll();
   const { user, loading } = firebase;
 
+  /* -------------------------------------------------------------------------- */
+  /*                 RENDERING THE SPINNER WHEN LOADING IS TRUE                 */
+  /* -------------------------------------------------------------------------- */
   if (loading) {
     return (
       <div

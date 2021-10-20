@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 /* -------------------------------------------------------------------------- */
 /*                        IMPORTING PAGES & COMPONENTS                        */
@@ -8,7 +10,7 @@ import AllProvider from "./context/AllProvider";
 import Footer from "./Screens/Components/Footer/Footer";
 import Header from "./Screens/Components/Header/Header";
 import PrivateRoute from "./Screens/Components/PrivateRoute/PrivateRoute";
-import ServiceDetails from "./Screens/Components/ServiceDetails/ServiceDetails";
+import ServiceDetails from "./Screens/Pages/ServiceDetails/ServiceDetails";
 import NotFound from "./Screens/Pages/404/NotFound";
 import About from "./Screens/Pages/About/About";
 import Dentists from "./Screens/Pages/Dentists/Dentists";
@@ -17,8 +19,18 @@ import Signin from "./Screens/Pages/Form/Signin/Signin";
 import Signup from "./Screens/Pages/Form/Signup/Signup";
 import Home from "./Screens/Pages/Home/Home";
 import Services from "./Screens/Pages/Services/Services";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      offset: 150,
+      delay: 100,
+      duration: 900,
+      easing: "ease",
+    });
+  });
+
   return (
     <div className="main">
       <AllProvider>
