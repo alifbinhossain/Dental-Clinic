@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import initAuthentication from "../Firebase/Firebase.Init";
-import Swal from "sweetalert2";
 
 /* -------------------------------------------------------------------------- */
 /*                           IMPORTING FROM FIREBASE                          */
@@ -18,12 +17,13 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
+import popupError from "../popup/popupError";
+import popupSuccess from "../popup/popupSuccess";
 
 initAuthentication();
 
 const useFirebase = () => {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
   const auth = getAuth();
@@ -43,8 +43,8 @@ const useFirebase = () => {
       displayName: name,
     })
       .then(() => {})
-      .catch((error) => {
-        setError(error.message);
+      .catch((err) => {
+        popupError(err.message);
       });
   };
 
@@ -56,26 +56,13 @@ const useFirebase = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         updateUserInfo(name);
-        const newUser = result.user;
-        setUser(newUser);
-        setError("");
-        Swal.fire({
-          icon: "success",
-          title: "Great! Your account has been succesfully created.. ",
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
-        window.location.reload();
+        setUser(result.user);
+        logOut(false);
+        window.location.pathname = "/form/signin";
+        popupSuccess("new");
       })
-      .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: error.message,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        setError(error.message);
+      .catch((err) => {
+        popupError(err.message);
       });
 
     setLoading(false);
@@ -102,42 +89,22 @@ const useFirebase = () => {
   const resetPassword = (email) => {
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        setError("");
-        Swal.fire({
-          icon: "success",
-          title: "Please Check Your Email ",
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
+        popupSuccess("reset");
       })
-      .catch((error) => {
-        Swal.fire({
-          icon: "error",
-          title: error.message,
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        setError(error.message);
+      .catch((err) => {
+        popupError(err.message);
       });
   };
   /* -------------------------------------------------------------------------- */
   /*                                 USER LOGOUT                                */
   /* -------------------------------------------------------------------------- */
-  const logOut = () => {
+  const logOut = (isfalse) => {
     signOut(auth)
       .then(() => {
-        setError("");
-        Swal.fire({
-          icon: "success",
-          title: "You are successfully logged out..",
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
+        popupSuccess("logout", isfalse);
       })
-      .catch((error) => {
-        setError(error.message);
+      .catch((err) => {
+        popupError(err.message);
       });
   };
 
@@ -162,7 +129,6 @@ const useFirebase = () => {
   return {
     user,
     setUser,
-    error,
     loading,
     createNewAccount,
     resetPassword,

@@ -4,12 +4,11 @@ import { Col, Form, Row } from "react-bootstrap";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAll from "../../../../hooks/useAll";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
+import popupError from "../../../../popup/popupError";
+import popupSuccess from "../../../../popup/popupSuccess";
 
 const Signin = () => {
-  const MySwal = withReactContent(Swal);
-  const [error, setError] = useState("");
+  const [user, setUser] = useState({});
   const { firebase } = useAll();
   const {
     googleProvider,
@@ -30,19 +29,11 @@ const Signin = () => {
   const handleSignInWithSocial = (provider) => {
     signInWithSocialAccount(provider)
       .then((result) => {
-        Swal.fire({
-          icon: "success",
-          title: "Congrats! You are Succesfully logged in",
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
-        setError("");
+        popupSuccess("login");
         history.push(redirectUrl);
       })
-
       .catch((err) => {
-        setError(err.message);
+        popupError(err.message);
       });
   };
 
@@ -55,29 +46,24 @@ const Signin = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
+    setUser(data);
     const userEmail = data.email;
     const userPassword = data.password;
     signInWithEmail(userEmail, userPassword)
       .then((result) => {
-        Swal.fire({
-          icon: "success",
-          title: "Congrats! Succesfully logged in",
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
-        setError("");
+        popupSuccess("login");
         history.push(redirectUrl);
       })
       .catch((err) => {
-        Swal.fire({
-          icon: "error",
-          title: `Please try again.. ${err.message}`,
-          showConfirmButton: false,
-          timer: 1500,
-          padding: "1rem 2rem 3rem",
-        });
+        popupError(err.message);
       });
+  };
+
+  /* -------------------------------------------------------------------------- */
+  /*                               RESET PASSWORD                               */
+  /* -------------------------------------------------------------------------- */
+  const handleResetPassword = () => {
+    resetPassword(user?.email);
   };
 
   return (
@@ -90,9 +76,6 @@ const Signin = () => {
         </Col>
         <Col md={5} className="sign-right">
           <h1 className="text-white text-center">Sign In</h1>
-          <small className="text-danger text-center fw-bold mb-2 d-block">
-            {error && error}
-          </small>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label className="form-label">Email address</Form.Label>
@@ -112,12 +95,11 @@ const Signin = () => {
                 {...register("password", { required: true })}
               />
             </Form.Group>
-            <Form.Group
-              className="mb-3 d-flex justify-content-between align-items-center"
-              controlId="formHorizontalCheck"
-            >
+            <div className="mb-3 d-flex justify-content-between align-items-center">
               <Form.Check className="form-label" label="Remember me?" />
               <button
+                onClick={handleResetPassword}
+                type="reset"
                 style={{
                   backgroundColor: "transparent",
                   border: "none",
@@ -127,7 +109,7 @@ const Signin = () => {
               >
                 Forgot password?
               </button>
-            </Form.Group>
+            </div>
             <Form.Group className="mb-3" controlId="formHorizontalCheck">
               <button className="w-100 btn-custom" type="submit">
                 Sign In

@@ -20,7 +20,7 @@ const Header = () => {
       confirmButtonText: "Yes",
     }).then((result) => {
       if (result.isConfirmed) {
-        logOut();
+        logOut(true);
       }
     });
   };
