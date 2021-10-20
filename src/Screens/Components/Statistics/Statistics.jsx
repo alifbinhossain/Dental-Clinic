@@ -1,6 +1,6 @@
 import React from "react";
 import "./Statistics.css";
-import CountUp from "react-countup";
+import Count from "../Count/Count";
 
 const Statistics = () => {
   return (
@@ -15,35 +15,35 @@ const Statistics = () => {
         <li className="statistics-item">
           <i class="far fa-thumbs-up"></i>
           <h4>
-            <CountUp start={0} duration={2} end={100} suffix="%" />
+            <Count end="100" suffix="%"></Count>
           </h4>
           <p>Quality</p>
         </li>
         <li className="statistics-item">
           <i class="fas fa-user-injured"></i>
           <h4>
-            <CountUp start={0} duration={2} end={3500} suffix="+" />
+            <Count end="3500"></Count>
           </h4>
           <p>Patients a year</p>
         </li>
         <li className="statistics-item">
           <i class="fas fa-user-friends"></i>
           <h4>
-            <CountUp start={0} duration={2} end={250} suffix="+" />
+            <Count end="250"></Count>
           </h4>
           <p>Working People</p>
         </li>
         <li className="statistics-item">
           <i class="fas fa-calendar-week"></i>
           <h4>
-            <CountUp start={0} duration={2} end={7} />
+            <Count end="7"></Count>
           </h4>
           <p>Years of Experience</p>
         </li>
         <li className="statistics-item">
           <i class="far fa-smile-beam"></i>
           <h4>
-            <CountUp start={0} duration={2} end={15000} suffix="+" />
+            <Count end="15000"></Count>
           </h4>
           <p>Happy Smiles</p>
         </li>

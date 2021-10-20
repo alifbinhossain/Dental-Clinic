@@ -6,8 +6,8 @@ import img3 from "../../../Images/About/about-3.jpg";
 import img4 from "../../../Images/About/about-4.jpg";
 
 import { Carousel, Col, Row } from "react-bootstrap";
-import CountUp from "react-countup";
 import { useHistory } from "react-router";
+import Count from "../../Components/Count/Count";
 
 const About = () => {
   const history = useHistory();
@@ -112,35 +112,35 @@ const About = () => {
           <li className="about__statistics-item">
             <i class="fas fa-medal"></i>
             <h4>
-              <CountUp start={0} duration={2} end={1278} />
+              <Count end="1278"></Count>
             </h4>
             <p>The Quality of Used Medical Materials</p>
           </li>
           <li className="about__statistics-item">
             <i class="far fa-smile"></i>
             <h4>
-              <CountUp start={0} duration={2} end={4695} />
+              <Count end="4695"></Count>
             </h4>
             <p>A Full Range of Dental Services</p>
           </li>
           <li className="about__statistics-item">
             <i class="fas fa-wrench"></i>
             <h4>
-              <CountUp start={0} duration={2} end={1250} suffix="+" />
+              <Count end="1250"></Count>
             </h4>
             <p>Dental Implants-New Teeth in One Day</p>
           </li>
           <li className="about__statistics-item">
             <i class="fas fa-pen-nib"></i>
             <h4>
-              <CountUp start={0} duration={2} end={50} />
+              <Count end="50"></Count>
             </h4>
             <p>Modern Methods of Teeth Straightening</p>
           </li>
           <li className="about__statistics-item">
             <i class="fas fa-money-bill-wave"></i>
             <h4>
-              <CountUp start={0} duration={2} end={8500} suffix="+" />
+              <Count end="8500"></Count>
             </h4>
             <p>Loyalty Discounts of Regular Customers</p>
           </li>
